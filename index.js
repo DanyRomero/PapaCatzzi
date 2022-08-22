@@ -1,5 +1,4 @@
 
-
 //width 950
 //height 713
 
@@ -7,8 +6,18 @@
 let lienzo = document.getElementById("lienzo")
 let ctx = lienzo.getContext("2d");
 
+//info
+let camarasInfo = document.getElementById("cams");
+let vidasInfo = document.getElementById("vidas");
 
-//imagenes
+
+//boton inicio
+let botonIniciar = document.getElementsByTagName("button")[0];
+botonIniciar.addEventListener("click", () =>{
+   console.log("a jugar!")
+} ) 
+
+ //imagenes
 const michiImg = new Image();
 michiImg.src = "/images/cat.png"
 const competenciaImg = new Image();
@@ -57,9 +66,7 @@ class Cat{
         ctx.fillRect(this.x, this.y, this.w, this.h);
         ctx.drawImage(this.imagen,this.x, this.y, this.w, this.h);
     }
-    recibirDaño(){
-        this.vida -=1;
-    }
+  
 }
 
 class Competencia{
@@ -128,27 +135,41 @@ function escogeCam(camaras) {
 //INICIO
 function iniciarJuego(){
     const michi = new Cat(30,590,150,120,7,"violet",michiImg);
-    const competencia = new Competencia(550,80,150,150,competencia2Img);
-    const competencia2 = new Competencia(100,170,150,90,competenciaImg);
-    const competencia3 = new Competencia(240,430,150,150,competencia2Img);
+    const competencia = new Competencia(550,80,160,150,competencia2Img);
+    const competencia2 = new Competencia(700,170,150,90,competenciaImg);
+    const competencia3 = new Competencia(240,430,160,150,competencia2Img);
     const competencia4 = new Competencia(680,550,150,90,competenciaImg);
     const camara1= new Camara(430,250,150,120,camaraImg);
     const camara2= new Camara(60,30,150,120,camaraImg);
     const camara3= new Camara(450,500,150,120,camaraImg);
     const camara4= new Camara(780,100,150,120,camaraImg);
-    const camaras = [camara1, camara2, camara3, camara4];   
+    const camaras = [camara1, camara2, camara3, camara4];
+    const competenciasGatos = [competencia,competencia2, competencia3,competencia4];  
+    
     
     teclas(michi);
     setInterval(() => escogeCam(camaras), 4000);
 
+
     setInterval(()=>{
-        ctx.clearRect(0,0,952,700);
+        ctx.clearRect(0,0,950,713);
+        vidasInfo.innerHTML = michi.vida;
         michi.dibujarse();
-        competencia.dibujarse();
-        competencia2.dibujarse();
-        competencia3.dibujarse();
-        competencia4.dibujarse();
+        competenciasGatos.forEach((gato)=>{
+            gato.dibujarse();
+            console.log(gato);
+
+            if(michi.x + michi.w >= gato.x && (michi.y >= gato.y + gato.h) ){
+                console.log("vida menos")
+                alert("");
+            }
+
+        })
+        
         camaras[actualICam].dibujarse();
+
+      
+
 
     },1000/30)
 }
