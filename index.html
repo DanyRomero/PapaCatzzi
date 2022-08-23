@@ -14,13 +14,29 @@
         <canvas id="lienzo" width="950" height="713"></canvas>
         <div class="info">
             <img class="camara"src="images/camara2.png" alt="camara">
-            <p>Cámaras: <span id="cams">0</span></p>
+            <p>Cámaras: <span id="cams"></span></p>
             <br>
             <img class="heart" src="images/hearth.png" alt="heart">
             <p>Vidas artísticas:<span id="vidas">*</span></p>
-            <button>Jugar de Nuevo</button>
         </div>
     <div>
+    <div class="modal">
+        <div class="modal-content">
+            <img src="images/sadCat.png" alt="sad cat">
+            <br>
+            <p>Esta vez <strong>ganó la competencia</strong>, pero ¿quieres volver a intentar?</p>
+            <span class="close-button">Intentar de nuevo</span>
+        </div>
+    </div>
+    <div class="win">
+        <div class="win-content">
+            <img class="winCat" src="images/happyCat.png" alt="happy cat">
+            <br>
+            <p><strong>¡Ganaste!</strong> Has demostrado quien es el mejor, ¿quieres volver a intentar?</p>
+            <span class="win-button">Intentar de nuevo</span>
+        </div>
+    </div>
+       
     <script src="index.js"></script>
 </body>
 </html>
