@@ -1,5 +1,7 @@
-const music = new Audio('./Sounds/CatWalk.mp3');
-music.play();
+const audio = new Audio();
+audio.src = "./Sounds/CatWalk.mp3";
+audio.volume = 0.1;
+audio.play();
 
 
 const modal = document.querySelector(".modal");
@@ -8,11 +10,14 @@ const closeButton = document.querySelector(".close-button");
 
 function toggleModal() {
     modal.classList.toggle("show-modal");
+    audio.play();
+    
 }
 
 function windowOnClick(event) {
     if (event.target === modal) {
         toggleModal();
+        
     }
 }
 

@@ -1,3 +1,17 @@
+//audio
+const audioCat = new Audio();
+audioCat.src = "./Sounds/cat-fight.mp3";
+audioCat.volume = 0.1;
+audioCat.playbackRate = 2;
+
+
+const audioCam = new Audio();
+audioCam.src = "./Sounds/camera-flash.mp3"
+audioCam.volume = 0.1;
+
+
+
+
 const closeButton = document.querySelector(".close-button");
 const modal = document.querySelector(".modal");
 
@@ -203,9 +217,10 @@ function iniciarJuego(){
                 michi.y + michi.h >= gato.y &&
                 michi.x <= gato.x + gato.w
             ){
-              michi.vida -= 1;
-              michi.x = 30;
-              michi.y = 590;
+                audioCat.play();
+                michi.vida -= 1;
+                michi.x = 30;
+                michi.y = 590;
             }
 
             if (michi.vida <= 0){
@@ -219,6 +234,7 @@ function iniciarJuego(){
                 michi.y + michi.h >= camaras[actualICam].y &&
                 michi.x <= camaras[actualICam].x + camaras[actualICam].w
             ){
+                audioCam.play();
                 michi.score += 1;
                 escogeCam(camaras);
             
