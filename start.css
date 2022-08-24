@@ -94,11 +94,12 @@ a:hover{
     text-align: center;
     cursor: pointer;
     border-radius: 0.25rem;
-    background-color: lightgray;
+    background-color: #eea849;
+    padding: .5rem;
 }
 
 .close-button:hover {
-	background-color:#eea849;
+	background-color:#f24437;
 }
 
 .show-modal {

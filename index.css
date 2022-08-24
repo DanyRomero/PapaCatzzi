@@ -105,15 +105,16 @@ button:hover{
     text-align: center;
     cursor: pointer;
     border-radius: 0.25rem;
-    background-color: rgb(196, 195, 195);
+    background-color: #eea849;
+    padding: .25rem;
 }
 
 .close-button:hover {
-    background-color:#eea849;
+    background-color:#f24437;
 }
 
 .win-button:hover {
-    background-color:#eea849;
+    background-color:#f24437;;
 }
 
 .show-modal {
