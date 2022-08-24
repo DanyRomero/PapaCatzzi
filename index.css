@@ -106,7 +106,7 @@ button:hover{
     cursor: pointer;
     border-radius: 0.25rem;
     background-color: #eea849;
-    padding: .25rem;
+    padding: .5rem;
 }
 
 .close-button:hover {
