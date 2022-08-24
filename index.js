@@ -242,7 +242,6 @@ function iniciarJuego(){
 
             if(michi.score >= 5){
                 clearInterval(intervalJuego);
-                console.log("Ganaste!")
                 openToggleModalWin();
             }
         })
