@@ -63,17 +63,17 @@ let vidasInfo = document.getElementById("vidas");
 
  //imagenes
 const michiImg = new Image();
-michiImg.src = "/images/cat.png"
+michiImg.src = "./images/cat.png"
 const competenciaImg = new Image();
-competenciaImg.src = "/images/competencia.png"
+competenciaImg.src = "./images/competencia.png"
 const competencia2Img = new Image();
-competencia2Img.src = "/images/competencia2.png"
+competencia2Img.src = "./images/competencia2.png"
 const competencia3Img = new Image();
-competencia3Img.src = "/images/competencia3.png"
+competencia3Img.src = "./images/competencia3.png"
 const competencia4Img = new Image();
-competencia4Img.src = "/images/competencia4.png"
+competencia4Img.src = "./images/competencia4.png"
 const camaraImg = new Image();
-camaraImg.src = "/images/camara2.png"
+camaraImg.src = "./images/camara2.png"
 
 //michi
 class Cat{
