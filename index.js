@@ -10,7 +10,7 @@ audioCam.src = "./Sounds/camera-flash.mp3"
 audioCam.volume = 0.1;
 
 
-
+// lose modal
 
 const closeButton = document.querySelector(".close-button");
 const modal = document.querySelector(".modal");
@@ -56,9 +56,7 @@ let ctx = lienzo.getContext("2d");
 //info
 let camarasInfo = document.getElementById("cams");
 let vidasInfo = document.getElementById("vidas");
-
-
-
+let tiempoInfo = document.getElementById("clock"); 
 
 
  //imagenes
@@ -86,6 +84,7 @@ class Cat{
         this.color= this.color
         this.imagen = imagen;
         this.score = 0;
+        this.time = 30;
     }
 
     moverDerecha(){
@@ -201,7 +200,17 @@ function iniciarJuego(){
     
     teclas(michi);
     const intervalEscogeCam = setInterval(() => escogeCam(camaras), 4000);
-
+    
+    tiempoInfo.innerHTML = michi.time;
+    const intervalTiempo = setInterval(()=>{
+        michi.time -= 1;
+        tiempoInfo.innerHTML = michi.time;
+        if(michi.time <= 0){
+            clearInterval(intervalJuego);
+            openToggleModal();
+        }
+    },1000);
+    
 
     const intervalJuego = setInterval(()=>{
         ctx.clearRect(0,0,950,713);

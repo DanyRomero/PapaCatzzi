@@ -27,19 +27,32 @@ canvas{
 }
 .info{
     margin-top: 30px;
-    margin-left: 40px;
+    margin-left: 50px;
     font-size: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(40,11,69);
     font-weight: bold;
+   
+    
+}
+
+.infoData{
+    display: flex;
+    margin-top: 25px;
 }
 
 .heart{
-    width: 30px;
+    width: 35px;
+    margin-right: 20px;
 }
 
 .camara{
+    width: 45px;
+    margin-right: 10px;
+}
+.clock{
     width: 35px;
+    margin-right: 20px;
 }
 
 button{
