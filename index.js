@@ -209,12 +209,15 @@ function iniciarJuego(){
             clearInterval(intervalJuego);
             openToggleModal();
             clearInterval(intervalTiempo);
-
+            clearInterval(intervalEscogeCam);
         }
+
         if(michi.score >= 5 && michi.time > 0){
             clearInterval(intervalJuego);
             openToggleModalWin();
             clearInterval(intervalTiempo);
+            clearInterval(intervalEscogeCam);
+        
         }
     },1000);
     

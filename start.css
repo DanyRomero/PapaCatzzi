@@ -4,11 +4,28 @@
     box-sizing: border-box;
 }
 
+
 body{
-    background: #f46b45;  
-    background: -webkit-linear-gradient(to right, #eea849, #f46b45); 
-    background: linear-gradient(to right, #eea849, #f46b45);
-}
+    animation: changeBg 10s infinite alternate linear;
+  }
+  @keyframes changeBg{
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #eea849;
+    }
+    50% {
+      background:#f46b45;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #e69563;
+    }
+  }
+  
 .catSunglasses{
     height: 100vh;
     margin-left: 50px;
