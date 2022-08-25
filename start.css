@@ -146,6 +146,8 @@ g
         padding: 50px;
         border-radius: 20px;
         text-align: center;
+        width: max-content;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
     }
     .catSunglasses{
         max-width: 100%;
