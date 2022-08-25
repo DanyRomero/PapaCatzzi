@@ -208,6 +208,13 @@ function iniciarJuego(){
         if(michi.time <= 0){
             clearInterval(intervalJuego);
             openToggleModal();
+            clearInterval(intervalTiempo);
+
+        }
+        if(michi.score >= 5 && michi.time > 0){
+            clearInterval(intervalJuego);
+            openToggleModalWin();
+            clearInterval(intervalTiempo);
         }
     },1000);
     
