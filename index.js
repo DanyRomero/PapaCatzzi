@@ -205,7 +205,7 @@ function iniciarJuego(){
     const intervalTiempo = setInterval(()=>{
         michi.time -= 1;
         tiempoInfo.innerHTML = michi.time;
-        if(michi.time <= 0){
+        if(michi.time <= 0 || michi.vida <= 0){
             clearInterval(intervalJuego);
             openToggleModal();
             clearInterval(intervalTiempo);
@@ -217,7 +217,6 @@ function iniciarJuego(){
             openToggleModalWin();
             clearInterval(intervalTiempo);
             clearInterval(intervalEscogeCam);
-        
         }
     },1000);
     
@@ -242,11 +241,6 @@ function iniciarJuego(){
                 michi.y = 590;
             }
 
-            if (michi.vida <= 0){
-                clearInterval(intervalJuego);
-                openToggleModal();
-            }
-
             if(
                 michi.x + michi.w >= camaras[actualICam].x &&
                 michi.y <= camaras[actualICam].y + camaras[actualICam].h &&
@@ -255,13 +249,7 @@ function iniciarJuego(){
             ){
                 audioCam.play();
                 michi.score += 1;
-                escogeCam(camaras);
-            
-            }
-
-            if(michi.score >= 5){
-                clearInterval(intervalJuego);
-                openToggleModalWin();
+                escogeCam(camaras);            
             }
         })
         camaras[actualICam].dibujarse();
