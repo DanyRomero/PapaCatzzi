@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #eea849;
+}
 .stage{
     height: 100vh;
-    background-color: #eea849;
     display: flex;
 }
 
